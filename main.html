@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-US"> 
+ <head> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  <link href="styles/style.css" rel="stylesheet"> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width"> 
+  <title>My test page</title> 
+ <style type="text/css" id="dcoder_stylesheet">html {
+  font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high */
+  font-family:"Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+p,
+li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+html {
+  background-color: #00539f;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #ff9500;
+  padding: 0 0 0 20px;
+  border: 5px solid black;
+}
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+  text-shadow: 3px 3px 1px black;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}</style></head> 
+ <body> 
+  <h1>SKYFORCE</h1> 
+  <h2>introduction</h2> 
+  <img src="https://i.imgur.com/1ahfkcOvfUyYkKttJbkws1kAzA_NY5Ggg" alt="My test image"> 
+  <p>skyforce is a 2d game.</p> 
+  <p>its genre includes:</p> 
+  <ul> 
+   <li>flight </li> 
+   <li>simulation </li> 
+   <li>action</li> 
+  </ul> 
+  <p>It was created using:</p> 
+  <ol> 
+   <li>pydroid</li> 
+   <li>pygame</li> 
+   <li>pymunk</li> 
+  </ol> 
+  <p>You can download it from <a href="https://www.google.com">google</a></p> 
+  <button>Change user</button> 
+  <script src="scripts/main.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">const myHeading = document.querySelector("h2");
+myHeading.textContent = "Hello world!";
+
+let food = 'rice';
+
+if (food === 'rice'){
+  console.log("now that's what I'm talking about ");
+} else{
+  console.log("no i want rice");
+}
+
+function multiply(num1, num2) {
+  let result = num1 * num2;
+  return console.log(result);
+}
+
+multiply(4, 7);
+multiply(20, 20);
+multiply(0.5, 3);
+
+document.querySelector("html").addEventListener("click", function () {
+  console.log("Ouch! Stop poking me!");
+})
+
+let myButton = document.querySelector("button");
+let myheading = document.querySelector("h1");
+
+function setUserName() {
+  const myName = prompt("Please enter your name.");
+  if (!myName){
+    setUserName();
+  }else{
+     localStorage.setItem("name", myName);
+     myheading.textContent = `Mozilla is cool, ${myName}`;
+}
+}
+
+if (!localStorage.getItem("name")) {
+  setUserName();
+} else {
+  const storedName = localStorage.getItem("name");
+  myheading.textContent = `Mozilla is cool, ${storedName}`;
+}
+
+myButton.addEventListener("click", () => {
+  setUserName();
+});
+
+</script></body></html>
